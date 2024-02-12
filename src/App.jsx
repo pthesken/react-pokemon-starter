@@ -1,11 +1,11 @@
 import { useState } from "react";
 import PokemonCard from "./PokemonCard";
-import pokidex from "./pokemon";
+import pokidexEntries from "./pokemon";
 
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [pokidex, setPokidex] = useState(pokidexEntries);
 
   return (
     <main className="main-container">
