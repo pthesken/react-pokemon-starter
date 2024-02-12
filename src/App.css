@@ -19,6 +19,17 @@ body {
   font-size: 8rem;
 }
 
+.pokemon-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px; /* Adjust the space between cards */
+  justify-content: center; /* Center the cards in the container */
+  justify-items: center; /* Center grid items within their cells horizontally */
+  width: 100%; /* Grow to fill the parent container */
+  max-width: 1000px;
+  padding: 20px; /* Optional: adds some space around the grid */
+}
+
 .pokemon-card {
   width: 200px;
   height: 300px;
@@ -28,7 +39,6 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   background-color: #f9f9f9;
-  margin: 20px;
   padding-top: 20px;
 
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;

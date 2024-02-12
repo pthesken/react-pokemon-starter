@@ -11,16 +11,18 @@ function App() {
     <main className="main-container">
       <h1 className="page-header">React Pokidex</h1>
 
-      {pokidex &&
-        pokidex.map((pokemon) => {
-          return (
-            <PokemonCard
-              name={pokemon.name}
-              icon={pokemon.icon}
-              typeIcon={pokemon.typeIcon}
-            />
-          );
-        })}
+      <div className="pokemon-cards-container">
+        {pokidex &&
+          pokidex.map((pokemon) => {
+            return (
+              <PokemonCard
+                name={pokemon.name}
+                icon={pokemon.icon}
+                typeIcon={pokemon.typeIcon}
+              />
+            );
+          })}
+      </div>
     </main>
   );
 }
