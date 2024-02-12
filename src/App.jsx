@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PokemonCard from "./PokemonCard";
-import pokemon from "./pokemon";
+import pokidex from "./pokemon";
 
 import "./App.css";
 
@@ -11,16 +11,16 @@ function App() {
     <main className="main-container">
       <h1 className="page-header">React Pokidex</h1>
 
-      <PokemonCard
-        name={pokemon[0].name}
-        icon={pokemon[0].icon}
-        typeIcon={pokemon[0].typeIcon}
-      />
-      <PokemonCard
-        name={pokemon[1].name}
-        icon={pokemon[1].icon}
-        typeIcon={pokemon[1].typeIcon}
-      />
+      {pokidex &&
+        pokidex.map((pokemon) => {
+          return (
+            <PokemonCard
+              name={pokemon.name}
+              icon={pokemon.icon}
+              typeIcon={pokemon.typeIcon}
+            />
+          );
+        })}
     </main>
   );
 }
