@@ -1,8 +1,8 @@
 import { useState } from "react";
-import PokemonCard from "./PokemonCard";
 import pokidexEntries from "./pokemon";
 import "./App.css";
-import { PokemonDetails } from "./PokemonDetails";
+import { PokemonDetails } from "./components/PokemonDetails";
+import PokemonCardCollection from "./components/PokemonCardCollection";
 
 function App() {
   const [pokidex, setPokidex] = useState(pokidexEntries);
@@ -23,22 +23,10 @@ function App() {
           />
         )}
       </div>
-
-      <div className="pokemon-cards-container">
-        {pokidex &&
-          pokidex.map((pokemon) => {
-            return (
-              <PokemonCard
-                onClickHandler={() => {
-                  setSelectedPokemon(pokemon);
-                }}
-                name={pokemon.name}
-                icon={pokemon.icon}
-                typeIcon={pokemon.typeIcon}
-              />
-            );
-          })}
-      </div>
+      <PokemonCardCollection
+        pokidex={pokidex}
+        onPokemonCardClick={setSelectedPokemon}
+      />
     </main>
   );
 }
