@@ -19,6 +19,16 @@ body {
   font-size: 8rem;
 }
 
+.pokemon-details {
+  display: flex;
+  
+  border: solid black 10px;
+}
+
+.detail-image {
+  width: 300px;
+}
+
 .pokemon-cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
